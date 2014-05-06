@@ -1,0 +1,1 @@
+* html .clr{height:1%;overflow:visible}*+html .clr{min-height:1%}.clr:after{clear:both;content:".";display:block;height:0;visibility:hidden;font-size:0}.clearfix{display:block;zoom:1}.clearfix:after{content:" ";display:block;font-size:0;height:0;clear:both;visibility:hidden}

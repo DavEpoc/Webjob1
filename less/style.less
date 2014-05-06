@@ -1,0 +1,231 @@
+@import "grid";
+@import "classes";
+
+/* Mayer CSS Reset */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    //font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+/* remember to define focus styles! */
+:focus {
+    outline: 0;
+}
+
+/* remember to highlight inserts somehow! */
+ins {
+    text-decoration: none;
+}
+del {
+    text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+
+
+
+
+
+#container{
+    width:100%;
+    margin:  0px 0px 0px 0px;
+    padding:  0px 0px 0px 0px;
+    position: relative;
+    float: left;
+}
+header{
+    width:100%; height:60px;
+
+    overflow: hidden;
+    position: relative;
+    float: left;
+}
+
+nav { width:100%;height:50px;
+
+      display:block;
+      position: relative;
+      float: left;
+}
+
+#main{
+    width:100%;
+    position: relative;
+    float: left;
+    #benvenuto{
+        background: #FFFFE0;
+        border: 2px solid #E6DB55;
+        padding: 10px;
+    }
+}
+aside{
+    width:100%;
+    position: relative;
+    float: left;
+}
+footer{
+    width:100%;
+    position: relative;
+    float: left;
+}
+//Layout pagina singola
+.single #container{
+
+    #main{ .grid_9(); }
+
+    aside{ .grid_3(); }
+
+}
+
+//Layout pagina errore
+.error404{
+    #main{ .grid_12(); }
+    .sx{ .grid_4(); }
+    .dx{
+        .grid_6();
+        margin-left: 170px;
+    }
+}
+
+//Regole per lo Slider
+
+.home{
+    .mask{
+        width: 100%;
+        position: relative;
+
+        #container-slider{
+            height: 300px;
+            width: 700px;
+            overflow: hidden;
+
+            #content-1, #content-2, #content-3{
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                display:none;
+                &.active{ display:block;}
+
+                img{display:block;
+                    float:left;
+                    margin-right:10px;
+                }
+            }
+        }
+    }
+}
+
+/* oltre contenuto base */
+
+//colore link
+ul{
+    a:link      {text-decoration: none; color: white;}
+    a:visited   {text-decoration: none; color: white;}
+    a:active    {text-decoration: none; color: orange;}
+    a:hover     {text-decoration: underline; color:orange; font-weight:bold;}
+}
+// Sfondo fisso
+body { display:block;
+       //background-image:url(fiocco_trasparente2.png);
+       background-repeat:repeat;
+       background-color:black;
+       background-size: 500px 500px;
+       background-attachment: fixed;;
+       color:white;
+       width:100%;
+
+}
+
+//Colore sfondo
+#container > *{background-color:rgba(0,0,0, 1); }
+
+//Margin,Padding,Ul,Ol Reset
+*,html { margin:0px; padding:0px; list-style-type:none;}
+
+//Margini tra parti pagina
+nav {display:block; margin-bottom:10px; z-index:100;}
+
+#main{margin-right:1px; margin-bottom:10px;}
+
+//Sidebar Laterali
+
+
+// Menu
+
+
+nav > div > ul > li{ background:linear-gradient( -45deg, black, gray ); display:block; float:left; width:25%; height:60px; text-align:center; line-height: 60px; }
+nav > div > ul > li > a{ display:block; height:60px; color:white; }
+ul > li:first-child     {margin-left:0px;}
+li > ul > li {background:linear-gradient( -45deg, black, gray); text-align:center; line-height:60px; height:60px;}
+li > ul > li > a {display:block; line-height: 60px; height:60px; color:white;}
+li > ul {display:none;}
+li:hover > ul {display:block;}
+
+//Immagine principale
+
+#mainimage { display:block;
+             //background-image:url(fiocco_trasparente2.png);
+             background-repeat:repeat;
+             background-color:black;
+             background-size: 970px 375px;
+             background-attachment: fixed;;
+             color:black;
+             width:100%; height:375px; float:none;
+}
+
+.html *{margin:0px; padding:0px;}
+
+
+
+//Logo
+
+#logo {display:block; width:100%; height:60px; background-color:white;}
+
+// bottone moretext di centropagina
+
+.moretext { dispaly:block; width:90px; height:30px; background-color:orange; text-align:center;
+            color:white; position:relative; bottom:0px; right:0px; line-height:30px;
+
+            a:link      {text-decoration: none; color: white;}
+            a:visited   {text-decoration: none; color: white;}
+            a:active    {text-decoration: none; color: red;}
+            a:hover     {text-decoration: underline; color:red; font-weight:bold;}
+
+
+}
