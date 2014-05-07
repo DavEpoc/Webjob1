@@ -60,16 +60,7 @@
         <div class="row">
             <div class="col-sm-2">
                 <header>
-                    <img id="logo" src="<?php echo $opzioni['logo']; ?>" title="<?php bloginfo('name'); ?> Logo" />
-                    <!--               <hgroup>
-                    <?php if (!is_single()) : ?>
-                                                   <h1 id="titolo-sito"><a href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo bloginfo('name'); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
-                                                   <h2 id="descrizione-sito"><?php bloginfo('description'); ?></h2>
-                    <?php else : ?>
-                                                   <h2 id="titolo-sito"><a href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo bloginfo('name'); ?>" rel="home"><?php bloginfo('name'); ?></a></h2>
-                                                   <h3 id="descrizione-sito"><?php bloginfo('description'); ?></h3>
-                    <?php endif; ?>
-                                   </hgroup> -->
+                    <img id="logo" class="logo" src="<?php echo $opzioni['logo']; ?>" title="<?php bloginfo('name'); ?> Logo" />
                 </header>
             </div>
             <div class="col-sm-8">
@@ -80,7 +71,4 @@
         </div>
 
         <div id="container" class="container">
-            <div class="row">
-                <div class="col-sm-2"> <?php get_sidebar('left'); ?> </div>
-                <div class="col-sm-5">
-                    <!-- Fine Header -->
+            <!-- Fine Header -->

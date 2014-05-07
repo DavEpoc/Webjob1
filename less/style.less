@@ -68,14 +68,14 @@ table {
     float: left;
 }
 header{
-    width:100%; height:60px;
+    width:100%;
 
     overflow: hidden;
     position: relative;
     float: left;
 }
 
-nav { width:100%;height:50px;
+nav { width:100%;height:60px;
 
       display:block;
       position: relative;
@@ -87,6 +87,7 @@ nav { width:100%;height:50px;
     position: relative;
     float: left;
     #benvenuto{
+        color:black;
         background: #FFFFE0;
         border: 2px solid #E6DB55;
         padding: 10px;
@@ -105,20 +106,23 @@ footer{
 //Layout pagina singola
 .single #container{
 
-    #main{ .grid_9(); }
+    #main{     width:100%;
+               position: relative;
+               float: left; }
 
-    aside{ .grid_3(); }
+    aside{     width:100%;
+               position: relative;
+               float: left; }
 
 }
 
 //Layout pagina errore
 .error404{
-    #main{ .grid_12(); }
-    .sx{ .grid_4(); }
-    .dx{
-        .grid_6();
-        margin-left: 170px;
-    }
+    #main{ width:100%;
+           position: relative;
+           float: left; }
+    .sx{}
+    .dx{}
 }
 
 //Regole per lo Slider
@@ -154,7 +158,7 @@ footer{
 /* oltre contenuto base */
 
 //colore link
-ul{
+nav ul{
     a:link      {text-decoration: none; color: white;}
     a:visited   {text-decoration: none; color: white;}
     a:active    {text-decoration: none; color: orange;}
@@ -189,10 +193,15 @@ nav {display:block; margin-bottom:10px; z-index:100;}
 // Menu
 
 
-nav > div > ul > li{ background:linear-gradient( -45deg, black, gray ); display:block; float:left; width:25%; height:60px; text-align:center; line-height: 60px; }
+nav > div > ul > li{ background:linear-gradient( -45deg, black, gray ); display:block;
+                     width:25%; float:left; height:60px; text-align:center; line-height: 60px; font-size:20px;
+                     text-shadow: -2px -1px 10px white;
+
+
+}
 nav > div > ul > li > a{ display:block; height:60px; color:white; }
 ul > li:first-child     {margin-left:0px;}
-li > ul > li {background:linear-gradient( -45deg, black, gray); text-align:center; line-height:60px; height:60px;}
+li > ul > li {background:linear-gradient( -45deg, black, gray); text-align:center; line-height:60px; height:60px; font-size:20px;}
 li > ul > li > a {display:block; line-height: 60px; height:60px; color:white;}
 li > ul {display:none;}
 li:hover > ul {display:block;}
@@ -215,17 +224,29 @@ li:hover > ul {display:block;}
 
 //Logo
 
-#logo {display:block; width:100%; height:60px; background-color:white;}
+.logo {display:block; width:100%; height:60px; background-color:white;}
 
 // bottone moretext di centropagina
 
-.moretext { dispaly:block; width:90px; height:30px; background-color:orange; text-align:center;
-            color:white; position:relative; bottom:0px; right:0px; line-height:30px;
+.readmore { position:relative; height:30px;}
 
+.moretext { width:90px; height:30px; background-color:orange; text-align:center; z-index:10;
+            color:white; position:absolute; bottom:0px; right:0px; line-height:30px;
+
+            a           {display:block; width:90px; height:30px; z-index:10;}
             a:link      {text-decoration: none; color: white;}
             a:visited   {text-decoration: none; color: white;}
             a:active    {text-decoration: none; color: red;}
-            a:hover     {text-decoration: underline; color:red; font-weight:bold;}
-
-
+            a:hover     {text-decoration: none; color:red; font-weight:bold;}
 }
+
+//footer di centro pagina
+
+.mainfooter{ width:100%; border-top: 2px dotted gray; height:100px; line-height:100px; margin-top:10px;  }
+
+
+// striscette che fanno da titolo
+.striscia1 { width:100%; color:orange; border-bottom: 2px solid gray; font-size:30px; }
+.striscia2 { width:100%; color:orange; position:relative; font-size:20px; text-align:center;
+             .parola{display:block; width:20%; word-wrap:break-word;}
+             .retta{ width:80%; height:50%; border-bottom: 2px solid gray; position:absolute; top:0px; right:0px; word-wrap:break-word;}  }

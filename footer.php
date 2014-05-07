@@ -1,7 +1,3 @@
-</div> <!-- fine col-ms-3 -->
-<div class="col-sm-2"> <?php get_sidebar('right'); ?> </div>
-</div> <!-- chiudo row -->
-
 <!-- Inizio Footer -->
 <div class="row">
     <div class="col-sm-12">
