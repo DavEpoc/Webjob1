@@ -18,13 +18,13 @@
                         <time datetime="<?php the_date('c'); ?>" pubdate>
                             <?php the_time(get_option('date_format')); ?>
                         </time>
-
+                        &nbsp &nbsp &nbsp
                         <span class="autore">
-                            Scritto da: <?php the_author_link(); ?>
+                            Written by: <?php the_author_link(); ?>
                         </span>
-
+                        &nbsp &nbsp &nbsp
                         <span class="cat">
-                            Categorie: <?php the_category(','); ?>
+                            Categories: <?php the_category(','); ?>
                         </span>
                     </div>
                 </header>
@@ -35,11 +35,11 @@
                     global $more;
                     $more = 0;
                     ?>
-    <?php the_content('<div class="readmore"><p class="moretext">' . __('Read More', 'am_template') . '</p></div>'); ?>
+                    <?php the_content('<div class="readmore"><p class="moretext">' . __('Read More', 'am_template') . '</p></div>'); ?>
                 </section>
 
                 <footer>
-                    <div class="mainfooter"> <?php the_tags('Etichette', ', ', '.'); ?> </div>
+                    <div class="mainfooter"> <?php the_tags('Tags: ', ', ', '.'); ?> </div>
                 </footer>
             </article>
 
@@ -67,15 +67,15 @@
                             <h3><?php the_title(); ?></h3>
                             <div class="meta">
                                 <time datetime="<?php the_date('c'); ?>" pubdate>
-        <?php the_time(get_option('date_format')); ?>
+                                    <?php the_time(get_option('date_format')); ?>
                                 </time>
-
+                                &nbsp &nbsp &nbsp
                                 <span class="autore">
-                                    Scritto da: <?php the_author_link(); ?>
+                                    Written by: <?php the_author_link(); ?>
                                 </span>
-
+                                </br>
                                 <span class="cat">
-                                    Categorie: <?php the_category(','); ?>
+                                    Categories: <?php the_category(','); ?>
                                 </span>
                             </div>
                         </header>
@@ -86,11 +86,11 @@
                             global $more;
                             $more = 0;
                             ?>
-        <?php the_content("Continua a Leggere"); ?>
+                            <?php the_content("Continua a Leggere"); ?>
                         </section>
 
                         <footer>
-                    <?php the_tags('Etichette', ', ', '.'); ?>
+                            <?php the_tags('Tags: ', ', ', '.'); ?>
                         </footer>
                     </article>
                     <?php
@@ -100,7 +100,7 @@
 
                 <!-- Aggiungere un messaggio di errore --> Non c'è alcun articolo!
 
-<?php endif; ?>
+            <?php endif; ?>
 
         </div>
 

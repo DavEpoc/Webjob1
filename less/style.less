@@ -250,3 +250,23 @@ li:hover > ul {display:block;}
 .striscia2 { width:100%; color:orange; position:relative; font-size:20px; text-align:center;
              .parola{display:block; width:20%; word-wrap:break-word;}
              .retta{ width:80%; height:50%; border-bottom: 2px solid gray; position:absolute; top:0px; right:0px; word-wrap:break-word;}  }
+
+             //Grafica Commenti
+
+             /* Textarea */
+             .form-control { max-width: 100%; max-height:162px;}
+
+             .commentlist li { min-height:150px; position:relative; border: 2px solid gray; margin-bottom:10px; }
+             .commentlist li { img {float:left;}
+                               //div div{position:absolute; left:0px; bottom:0px; }
+                               small{position:absolute; right:0px; top:0px;}
+                               // .comment-text { position:absolute; left:0px; top:0px;}
+
+                               //Striscetta da non invadere in basso
+                               .reply {width:100%; position:absolute; bottom:0px; height:15px; clear:both;}
+                               //Striscetta da non invadere in alto
+                               .comment-meta {width:100%; position:absolute; top:0px; height:15px; clear:both;}
+                               .reply a {float:right;}
+             }
+             // div aggiuntivi per impedire invasione del testo (come per il footer)
+             .clear { height:15px; width:100%; clear:both;}

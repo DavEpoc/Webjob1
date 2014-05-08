@@ -18,13 +18,13 @@
                         <time datetime="<?php the_date('c'); ?>" pubdate>
                             <?php the_time(get_option('date_format')); ?>
                         </time>
-
+                        &nbsp &nbsp &nbsp
                         <span class="autore">
-                            Scritto da: <?php the_author_link(); ?>
+                            Written by: <?php the_author_link(); ?>
                         </span>
-
+                        &nbsp &nbsp &nbsp
                         <span class="cat">
-                            Categorie: <?php the_category(','); ?>
+                            Categories: <?php the_category(','); ?>
                         </span>
                     </div>
                 </header>
@@ -34,7 +34,7 @@
                 </section>
 
                 <footer>
-                    <div class="mainfooter"> <?php the_tags('Etichette', ', ', '.'); ?> </div>
+                    <div class="mainfooter"> <?php the_tags('Tags: ', ', ', '.'); ?> </div>
                 </footer>
             </article>
 
@@ -64,13 +64,13 @@
                                 <time datetime="<?php the_date('c'); ?>" pubdate>
                                     <?php the_time(get_option('date_format')); ?>
                                 </time>
-
+                                &nbsp &nbsp &nbsp
                                 <span class="autore">
-                                    Scritto da: <?php the_author_link(); ?>
+                                    Written by: <?php the_author_link(); ?>
                                 </span>
-
+                                </br>
                                 <span class="cat">
-                                    Categorie: <?php the_category(','); ?>
+                                    Categories: <?php the_category(','); ?>
                                 </span>
                             </div>
                         </header>
@@ -80,7 +80,7 @@
                         </section>
 
                         <footer>
-                            <?php the_tags('Etichette', ', ', '.'); ?>
+                            <?php the_tags('Tags: ', ', ', '.'); ?>
                         </footer>
                     </article>
                     <?php

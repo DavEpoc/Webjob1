@@ -8,13 +8,13 @@
                     <time datetime="<?php the_date('c'); ?>" pubdate>
                         <?php the_time(get_option('date_format')); ?>
                     </time>
-
+                    &nbsp &nbsp &nbsp
                     <span class="autore">
-                        Scritto da: <?php the_author_link(); ?>
+                        Written by: <?php the_author_link(); ?>
                     </span>
-
+                    &nbsp &nbsp &nbsp
                     <span class="cat">
-                        Categorie: <?php the_category(','); ?>
+                        Categories: <?php the_category(','); ?>
                     </span>
                 </div>
 
@@ -28,7 +28,7 @@
             <footer>
                 <!-- inserisco il cambiapagina nella mia pagina di articolo, devo mettere nextpage da wp però! -->
                 <?php
-                the_tags('Etichette: ', ', ', '.');
+                the_tags('Tags: ', ', ', '.');
 
                 $args = array(
                     'before' => '<div id="impag">' . __('Pagine: ', 'templatezero'),

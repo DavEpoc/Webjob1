@@ -119,46 +119,6 @@ function zero_widget_area() {
 
 add_action('widgets_init', 'zero_widget_area');
 
-/* Mostra Commenti (controllo HTML commenti,se sono sia di computer che degli utenti!) */
-
-function tz_comment_list($comment, $args, $depth) {
-    $GLOBALS['comment'] = $comment;
-    switch ($comment->comment_type) :
-        case 'pingback' :
-        case 'trackback' :
-            ?>
-            <li>Caso Pingback o Trackback</li>
-            <?php
-            break;
-        default :
-            ?>
-            <li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-                <!-- HTML da utente umano -->
-                <article class="comment">
-                    <div class="comment-info">
-                        <p class="comment-auth">
-                            <?php comment_author_link(); ?>
-                        </p>
-                        <time class="comment-time" pubdate datetime="<?php get_comment_date('c'); ?>">
-                            <?php comment_time('j F, Y'); ?>
-                        </time>
-
-                        <?php if ($comment->comment_approved == '0') : ?>
-                            <em class="comment-awaiting-moderation"><?php _e('Il tuo commento sta aspettando la moderazione.', 'am_template'); ?></em>
-                            <br />
-                        <?php endif; ?>
-
-                    </div><!-- .comment-info -->
-
-                    <p><?php comment_text(); ?></p>
-
-                </article><!-- .comment -->
-            </li>
-            <?php
-            break;
-    endswitch;
-}
-
 // Attivo le immagini in evidenza
 add_theme_support('post-thumbnails');
 
@@ -176,3 +136,77 @@ function tz_init() {
     wp_enqueue_script('jquery');
     wp_enqueue_script('tz-slider');
 }
+
+//FUNZIONI DIFFERENTI PER COMMENTI
+
+/* Mostra Commenti (controllo HTML commenti,se sono sia di computer che degli utenti!) */
+
+function tz_comment_list($comment, $args, $depth) {
+    $GLOBALS['comment'] = $comment;
+    switch ($comment->comment_type) :
+        case 'pingback' :
+        case 'trackback' :
+            ?>
+            <li>Caso Pingback o Trackback</li>
+            <?php
+            break;
+        default :
+            ?>
+            <li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
+                <!-- HTML da utente umano -->
+                <article class="comment">
+                    <div class="comment-info">
+                        <span class="comment-auth">
+                            Comment By: <?php comment_author_link(); ?>
+                        </span>
+                        &nbsp &nbsp &nbsp
+                        <span title="<?php comment_date('c'); ?>">
+                            <time class="comment-time" pubdate datetime="<?php comment_date('c'); ?>">
+                                <?php comment_time('j F, Y'); ?>
+                            </time>
+                        </span>
+
+                        <?php if ($comment->comment_approved == '0') : ?>
+                            <em class="comment-awaiting-moderation"><?php _e('Il tuo commento sta aspettando la moderazione.', 'am_template'); ?></em>
+                            <br />
+                        <?php endif; ?>
+
+                    </div><!-- .comment-info -->
+
+                    <p><?php comment_text(); ?></p>
+
+                </article><!-- .comment -->
+            </li>
+            <?php
+            break;
+    endswitch;
+}
+
+//this function will be called in the next section
+function advanced_comment($comment, $args, $depth) {
+    $GLOBALS['comment'] = $comment;
+    ?>
+    <li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
+        <div class="comment-author vcard">
+
+            <div class="comment-meta"><a href="<?php the_author_meta('user_url'); ?>"><?php _e('Written By ', '  ', '') ?><?php printf(__('%s'), get_comment_author_link()) ?></a></div>
+            <small><?php printf(__('%1$s at %2$s'), get_comment_date(), get_comment_time()) ?><?php edit_comment_link(__('(Edit)'), '  ', '') ?></small>
+            <small></small>
+        </div>
+        <div class="clear"></div>
+
+        <?php if ($comment->comment_approved == '0') : ?>
+            <em><?php _e('Your comment is awaiting moderation.') ?></em>
+            <br />
+        <?php endif; ?>
+
+        <div class="comment-text">
+            <?php echo get_avatar($comment, $size = '48', $default = '<path_to_url>'); ?>
+            <?php comment_text() ?>
+        </div>
+
+        <div class="reply">
+            <?php comment_reply_link(array_merge($args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+        </div>
+        <div class="clear"></div>
+    <?php } ?>
